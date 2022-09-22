@@ -34,3 +34,18 @@ func (o *Operator) CreateOperator() (err error) {
 	}
 	return err
 }
+
+func GetOperator(id int) (operator Operator, err error) {
+	operator = Operator{}
+	cmd := `select id, uuid, name, email, password, created_at from operators where id = ?`
+
+	err = Db.QueryRow(cmd, id).Scan(
+		&operator.ID,
+		&operator.UUID,
+		&operator.Name,
+		&operator.Email,
+		&operator.PasaWord,
+		&operator.CreatedAt)
+
+	return operator, err
+}
