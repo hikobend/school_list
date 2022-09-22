@@ -21,8 +21,8 @@ jobs:
       - name: fmt2 checks
         run: |
           go fmt
-
-      # buildテスト
+        # buildテスト
+  build:
     needs: setup
     runs-on: ubuntu-latest
     steps:
