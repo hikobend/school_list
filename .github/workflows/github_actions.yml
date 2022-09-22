@@ -21,3 +21,11 @@ jobs:
       - name: fmt2 checks
         run: |
           go fmt
+
+      # buildテスト
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: build
+        run: go build ./...
