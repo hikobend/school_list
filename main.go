@@ -16,4 +16,8 @@ func main() {
 	o.UpdateOperator()
 	o, _ = models.GetOperator(1)
 	fmt.Println(o)
+
+	o.DeleteOperator()
+	o, _ = models.GetOperator(1)
+	fmt.Println(o)
 }
