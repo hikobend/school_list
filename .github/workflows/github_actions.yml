@@ -1,4 +1,4 @@
-name: fmt
+name: check
 
 on:
   push:
@@ -6,18 +6,43 @@ on:
       - '*'
   pull_request:
     branches:
-      - 'feature/'
+      - '*'
 jobs:
-  build:
+  # 共通処理
+  setup:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2.4.2
-      # fmt 確認 
-      - name: fmt checks
-        run: |
-          go vet
-      # fmt 確認 
-      - name: fmt2 checks
-        run: |
-          go fmt
+      - name: set up
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.13
+        id: go
+      - name: check out
+        uses: actions/checkout@v2
+
+      # 処理を高速化するために環境をキャッシュ
+      - name: Cache
+        uses: actions/cache@v2.1.0
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+  # buildテスト
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: build
+        run: go build ./...
+
+  # testを通す
+  test:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: test
+        run: go test ./... -v
