@@ -115,3 +115,15 @@ func (s *School) UpdateSchool() (err error) {
 	}
 	return err
 }
+
+func (s *School) DeleteSchool() (err error) {
+	cmd := `delete from schools where id = ?`
+
+	_, err = Db.Exec(cmd, s.ID)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	return err
+}
