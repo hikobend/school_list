@@ -8,7 +8,11 @@ import (
 
 func main() {
 	fmt.Println(models.Db)
+	operator, _ := models.GetOperator(2)
+	operator.CreateSchool("testtest")
 
-	s, _ := models.GetSchool(1)
-	fmt.Println(s)
+	schools, _ := models.GetSchools()
+	for _, v := range schools {
+		fmt.Println(v)
+	}
 }
