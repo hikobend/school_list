@@ -8,6 +8,7 @@ import (
 
 func main() {
 	fmt.Println(models.Db)
+
 	operator, _ := models.GetOperator(2)
 	operator.CreateSchool("testtest")
 
