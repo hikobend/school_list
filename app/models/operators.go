@@ -49,3 +49,14 @@ func GetOperator(id int) (operator Operator, err error) {
 
 	return operator, err
 }
+
+func (o *Operator) UpdateOperator() (err error) {
+	cmd := `update operators set name = ?, email = ? where id = ?`
+
+	_, err = Db.Exec(cmd, o.Name, o.Email, o.ID)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+	return err
+}
