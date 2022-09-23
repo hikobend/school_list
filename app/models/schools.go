@@ -101,3 +101,17 @@ func (o *Operator) GetSchoolByOperator() (schools []School, err error) {
 
 	return schools, err
 }
+
+func (s *School) UpdateSchool() (err error) {
+	cmd := `update schools set name = ?, operator_id = ? where id = ?`
+
+	_, err = Db.Exec(cmd,
+		s.Name,
+		s.OperatorID,
+		s.ID)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+	return err
+}
