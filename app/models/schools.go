@@ -19,7 +19,7 @@ func (o *Operator) CreateSchool(name string) (err error) {
 		created_at) values (?, ?, ?)`
 
 	_, err = Db.Exec(cmd,
-		o.Name,
+		name,
 		o.ID,
 		time.Now())
 
