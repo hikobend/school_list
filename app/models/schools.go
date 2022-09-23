@@ -74,3 +74,30 @@ func GetSchools() (schools []School, err error) {
 
 	return schools, err
 }
+
+func (o *Operator) GetSchoolByOperator() (schools []School, err error) {
+	cmd := `select id, name, operator_id, created_at from schools where operator_id = ?`
+	rows, err := Db.Query(cmd, o.ID)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	for rows.Next() {
+		var school School
+		err = rows.Scan(
+			&school.ID,
+			&school.Name,
+			&school.OperatorID,
+			&school.CreatedAt)
+
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		schools = append(schools, school)
+	}
+	rows.Close()
+
+	return schools, err
+}
