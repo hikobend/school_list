@@ -60,3 +60,14 @@ func (o *Operator) UpdateOperator() (err error) {
 	}
 	return err
 }
+
+func (o *Operator) DeleteOperator() (err error) {
+	cmd := `delete from operators where id = ?`
+
+	_, err = Db.Exec(cmd, o.ID)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+	return err
+}
