@@ -1,3 +1,14 @@
-{{ define "content"}}
-<h1>indexs</h1>
-{{ end }}
+{{ define "content" }}
+OperatorName:{{.Name}}
+<h1>Sample SchoolApp</h1>
+
+<p>[<a href="/schools/new">Create</a>]</p>
+<hr>
+
+{{ range .Schools }}
+<div>{{ .Name }}</div>
+<p>[<a href="/schools/edit/{{.ID}}">Edit</a>]</p>
+<p>[<a href="/schools/delete/{{.ID}}">Delete</a>]</p>
+<hr>
+{{end}}
+{{end}}

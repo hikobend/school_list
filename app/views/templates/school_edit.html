@@ -1,0 +1,13 @@
+{{define "content"}}
+{{.Name}}
+<form role="form" action="/schools/update/{{.ID}}" method="post">
+    <div class="lead">SchoolsUpdate</div>
+    <div class="form-group">
+      <!-- <textarea class="form-control" name="name" id="name" placeholder="Todoを更新" rows="4">{{.Name}}</textarea> -->
+      <input class="form-control" name="name" id="name" value="{{.Name}}" rows="4"></input>
+      <br/>
+      <br/>
+      <button class="btn btn-lg btn-primary pull-right" type="submit">更新</button>
+    </div>
+  </form>
+{{end}}
