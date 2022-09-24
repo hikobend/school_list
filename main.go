@@ -19,4 +19,7 @@ func main() {
 		log.Panicln(err)
 	}
 	fmt.Println(session)
+
+	valid, _ := session.CheckSession()
+	fmt.Println(valid)
 }
