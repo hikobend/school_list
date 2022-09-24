@@ -21,6 +21,7 @@ var err error
 const (
 	tableNameOperator = "operators"
 	tableNameSchool   = "schools"
+	tableNameSession  = "sessionss"
 )
 
 // テーブルはmain関数の前に作成
