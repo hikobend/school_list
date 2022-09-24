@@ -21,7 +21,7 @@ var err error
 const (
 	tableNameOperator = "operators"
 	tableNameSchool   = "schools"
-	tableNameSession  = "sessionss"
+	tableNameSession  = "sessions"
 )
 
 // テーブルはmain関数の前に作成
@@ -50,6 +50,15 @@ func init() {
 		created_at DATETIME)`, tableNameSchool)
 
 	Db.Exec(cmdS)
+
+	cmdSe := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		uuid STRING NOT NULL UNIQUE,
+		email STRING,
+		operator_id INTEGER,
+		created_at DATETIME)`, tableNameSession)
+
+	Db.Exec(cmdSe)
 }
 
 // UUID作成
