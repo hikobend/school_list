@@ -100,3 +100,23 @@ func schoolUpdate(w http.ResponseWriter, r *http.Request, id int) {
 		http.Redirect(w, r, "/schools", 302)
 	}
 }
+
+func schoolDelete(w http.ResponseWriter, r *http.Request, id int) {
+	sess, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/login", 302)
+	} else {
+		_, err := sess.GetOperatorBySession()
+		if err != nil {
+			log.Println(err)
+		}
+		t, err := models.GetSchool(id)
+		if err != nil {
+			log.Println(err)
+		}
+		if err := t.DeleteSchool(); err != nil {
+			log.Println(err)
+		}
+		http.Redirect(w, r, "/schools", 302)
+	}
+}
