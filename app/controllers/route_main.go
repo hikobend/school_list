@@ -3,6 +3,8 @@ package controllers
 import (
 	"log"
 	"net/http"
+
+	"example.com/school/app/models"
 )
 
 func top(w http.ResponseWriter, r *http.Request) {
@@ -56,6 +58,45 @@ func schoolSave(w http.ResponseWriter, r *http.Request) {
 			log.Println(err)
 		}
 
+		http.Redirect(w, r, "/schools", 302)
+	}
+}
+
+func schoolEdit(w http.ResponseWriter, r *http.Request, id int) {
+	sess, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/login", 302)
+	} else {
+		_, err := sess.GetOperatorBySession()
+		if err != nil {
+			log.Println(err)
+		}
+		t, err := models.GetSchool(id)
+		if err != nil {
+			log.Println(err)
+		}
+		generateHTML(w, t, "layout", "private_navbar", "school_edit")
+	}
+}
+
+func schoolUpdate(w http.ResponseWriter, r *http.Request, id int) {
+	sess, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/login", 302)
+	} else {
+		err := r.ParseForm()
+		if err != nil {
+			log.Println(err)
+		}
+		operator, err := sess.GetOperatorBySession()
+		if err != nil {
+			log.Println(err)
+		}
+		name := r.PostFormValue("name")
+		t := &models.School{ID: id, Name: name, OperatorID: operator.ID}
+		if err := t.UpdateSchool(); err != nil {
+			log.Println(err)
+		}
 		http.Redirect(w, r, "/schools", 302)
 	}
 }
