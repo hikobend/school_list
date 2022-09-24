@@ -10,7 +10,7 @@ type Operator struct {
 	UUID      string
 	Name      string
 	Email     string
-	PasaWord  string
+	PassWord  string
 	CreatedAt time.Time
 }
 
@@ -26,7 +26,7 @@ func (o *Operator) CreateOperator() (err error) {
 		createUUID(),
 		o.Name,
 		o.Email,
-		Encrypt(o.PasaWord),
+		Encrypt(o.PassWord),
 		time.Now())
 
 	if err != nil {
@@ -44,7 +44,7 @@ func GetOperator(id int) (operator Operator, err error) {
 		&operator.UUID,
 		&operator.Name,
 		&operator.Email,
-		&operator.PasaWord,
+		&operator.PassWord,
 		&operator.CreatedAt)
 
 	return operator, err
