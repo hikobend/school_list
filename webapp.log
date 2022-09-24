@@ -288,3 +288,4 @@ net/http.(*conn).serve(0xc0002f0280, {0x457e6e0, 0xc00009b2c0})
 	/usr/local/go/src/net/http/server.go:1991 +0x607
 created by net/http.(*Server).Serve
 	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/24 13:45:46 operators.go:110: near "inset": syntax error
