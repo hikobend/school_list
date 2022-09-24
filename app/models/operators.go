@@ -12,6 +12,7 @@ type Operator struct {
 	Email     string
 	PassWord  string
 	CreatedAt time.Time
+	Schools   []School
 }
 
 type Session struct {
@@ -155,4 +156,17 @@ func (sess *Session) DeleteSessionByUUID() (err error) {
 	}
 
 	return err
+}
+
+func (sess *Session) GetOperatorBySession() (operator Operator, err error) {
+	operator = Operator{}
+	cmd := `select id, uuid, name, email, created_at from operators where id = ?`
+	err = Db.QueryRow(cmd, sess.OperatorID).Scan(
+		&operator.ID,
+		&operator.UUID,
+		&operator.Name,
+		&operator.Email,
+		&operator.CreatedAt)
+
+	return operator, err
 }
