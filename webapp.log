@@ -2,3 +2,289 @@
 2022/09/23 08:58:56 operators.go:59: no such table: operator
 2022/09/23 09:07:25 operators.go:70: no such table: operator
 2022/09/23 17:55:05 schools.go:44: sql: no rows in result set
+2022/09/23 22:59:18 server.go:3230: http: panic serving [::1]:53038: template: layout.html:13: function "templante" not defined
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x448c580, 0xc000099080})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x457e248?, 0xc000144000}, {0x0, 0x0}, {0xc0000bda20?, 0x2, 0x0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:17 +0x106
+example.com/school/app/controllers.top({0x457e248?, 0xc000144000?}, 0x40c2ab3?)
+	/Users/yamanakakohei/school/app/controllers/route_main.go:8 +0x6b
+net/http.HandlerFunc.ServeHTTP(0xc0000bdaf0?, {0x457e248?, 0xc000144000?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x457e248, 0xc000144000}, 0xc000128000)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00011e030?}, {0x457e248, 0xc000144000}, 0xc000128000)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000b6f00, {0x457e6e0, 0xc00009b2c0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/23 22:59:19 server.go:3230: http: panic serving [::1]:53039: template: layout.html:13: function "templante" not defined
+goroutine 21 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x448c580, 0xc000099160})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x457e248?, 0xc00019e000}, {0x0, 0x0}, {0xc000058a20?, 0x2, 0x0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:17 +0x106
+example.com/school/app/controllers.top({0x457e248?, 0xc00019e000?}, 0x40c2ab3?)
+	/Users/yamanakakohei/school/app/controllers/route_main.go:8 +0x6b
+net/http.HandlerFunc.ServeHTTP(0xc000058af0?, {0x457e248?, 0xc00019e000?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x457e248, 0xc00019e000}, 0xc000186100)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00009b410?}, {0x457e248, 0xc00019e000}, 0xc000186100)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000b6fa0, {0x457e6e0, 0xc00009b2c0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/23 22:59:19 server.go:3230: http: panic serving [::1]:53040: template: layout.html:13: function "templante" not defined
+goroutine 5 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x448c580, 0xc000099250})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x457e248?, 0xc00019e0e0}, {0x0, 0x0}, {0xc00005da20?, 0x2, 0x0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:17 +0x106
+example.com/school/app/controllers.top({0x457e248?, 0xc00019e0e0?}, 0x40c2ab3?)
+	/Users/yamanakakohei/school/app/controllers/route_main.go:8 +0x6b
+net/http.HandlerFunc.ServeHTTP(0xc00005daf0?, {0x457e248?, 0xc00019e0e0?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x457e248, 0xc00019e0e0}, 0xc00021c000)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000218090?}, {0x457e248, 0xc00019e0e0}, 0xc00021c000)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000000a0, {0x457e6e0, 0xc00009b2c0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/23 22:59:19 server.go:3230: http: panic serving [::1]:53041: template: layout.html:13: function "templante" not defined
+goroutine 26 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x448c580, 0xc000099350})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x457e248?, 0xc00019e1c0}, {0x0, 0x0}, {0xc00005da20?, 0x2, 0x0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:17 +0x106
+example.com/school/app/controllers.top({0x457e248?, 0xc00019e1c0?}, 0x40c2ab3?)
+	/Users/yamanakakohei/school/app/controllers/route_main.go:8 +0x6b
+net/http.HandlerFunc.ServeHTTP(0xc00005daf0?, {0x457e248?, 0xc00019e1c0?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x457e248, 0xc00019e1c0}, 0xc000186400)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00009baa0?}, {0x457e248, 0xc00019e1c0}, 0xc000186400)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000b7040, {0x457e6e0, 0xc00009b2c0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/23 22:59:24 server.go:3230: http: panic serving [::1]:53063: template: layout.html:13: function "templante" not defined
+goroutine 29 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x448c580, 0xc0001220e0})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x457e248?, 0xc00019e2a0}, {0x0, 0x0}, {0xc00005da20?, 0x2, 0x0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:17 +0x106
+example.com/school/app/controllers.top({0x457e248?, 0xc00019e2a0?}, 0x40c2ab3?)
+	/Users/yamanakakohei/school/app/controllers/route_main.go:8 +0x6b
+net/http.HandlerFunc.ServeHTTP(0xc00005daf0?, {0x457e248?, 0xc00019e2a0?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x457e248, 0xc00019e2a0}, 0xc000186600)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00009bda0?}, {0x457e248, 0xc00019e2a0}, 0xc000186600)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000b70e0, {0x457e6e0, 0xc00009b2c0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/23 22:59:30 server.go:3230: http: panic serving [::1]:53064: template: layout.html:13: function "templante" not defined
+goroutine 6 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x448c580, 0xc00029c0d0})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x457e248?, 0xc0002a0000}, {0x0, 0x0}, {0xc00005ea20?, 0x2, 0x0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:17 +0x106
+example.com/school/app/controllers.top({0x457e248?, 0xc0002a0000?}, 0x40c2ab3?)
+	/Users/yamanakakohei/school/app/controllers/route_main.go:8 +0x6b
+net/http.HandlerFunc.ServeHTTP(0xc00005eaf0?, {0x457e248?, 0xc0002a0000?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x457e248, 0xc0002a0000}, 0xc00021c100)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000218180?}, {0x457e248, 0xc0002a0000}, 0xc00021c100)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000140, {0x457e6e0, 0xc00009b2c0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/23 22:59:30 server.go:3230: http: panic serving [::1]:53077: template: layout.html:13: function "templante" not defined
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x448c580, 0xc0000160d0})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x457e248?, 0xc0002a00e0}, {0x0, 0x0}, {0xc000119a20?, 0x2, 0x0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:17 +0x106
+example.com/school/app/controllers.top({0x457e248?, 0xc0002a00e0?}, 0x40c2ab3?)
+	/Users/yamanakakohei/school/app/controllers/route_main.go:8 +0x6b
+net/http.HandlerFunc.ServeHTTP(0xc000119af0?, {0x457e248?, 0xc0002a00e0?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x457e248, 0xc0002a00e0}, 0xc000128200)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00011e3c0?}, {0x457e248, 0xc0002a00e0}, 0xc000128200)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00017c000, {0x457e6e0, 0xc00009b2c0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/23 22:59:30 server.go:3230: http: panic serving [::1]:53078: template: layout.html:13: function "templante" not defined
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x448c580, 0xc00029c1c0})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x457e248?, 0xc000242000}, {0x0, 0x0}, {0xc00005fa20?, 0x2, 0x0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:17 +0x106
+example.com/school/app/controllers.top({0x457e248?, 0xc000242000?}, 0x40c2ab3?)
+	/Users/yamanakakohei/school/app/controllers/route_main.go:8 +0x6b
+net/http.HandlerFunc.ServeHTTP(0xc00005faf0?, {0x457e248?, 0xc000242000?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x457e248, 0xc000242000}, 0xc00021c200)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000218300?}, {0x457e248, 0xc000242000}, 0xc00021c200)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000001e0, {0x457e6e0, 0xc00009b2c0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/23 22:59:31 server.go:3230: http: panic serving [::1]:53086: template: layout.html:13: function "templante" not defined
+goroutine 54 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x448c580, 0xc0000161d0})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x457e248?, 0xc0001440e0}, {0x0, 0x0}, {0xc00011aa20?, 0x2, 0x0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:17 +0x106
+example.com/school/app/controllers.top({0x457e248?, 0xc0001440e0?}, 0x40c2ab3?)
+	/Users/yamanakakohei/school/app/controllers/route_main.go:8 +0x6b
+net/http.HandlerFunc.ServeHTTP(0xc00011aaf0?, {0x457e248?, 0xc0001440e0?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x457e248, 0xc0001440e0}, 0xc000128300)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00011e420?}, {0x457e248, 0xc0001440e0}, 0xc000128300)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0002f0000, {0x457e6e0, 0xc00009b2c0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/23 22:59:31 server.go:3230: http: panic serving [::1]:53087: template: layout.html:13: function "templante" not defined
+goroutine 55 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x448c580, 0xc0000162c0})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x457e248?, 0xc0002420e0}, {0x0, 0x0}, {0xc000119a20?, 0x2, 0x0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:17 +0x106
+example.com/school/app/controllers.top({0x457e248?, 0xc0002420e0?}, 0x40c2ab3?)
+	/Users/yamanakakohei/school/app/controllers/route_main.go:8 +0x6b
+net/http.HandlerFunc.ServeHTTP(0xc000119af0?, {0x457e248?, 0xc0002420e0?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x457e248, 0xc0002420e0}, 0xc000286200)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000288600?}, {0x457e248, 0xc0002420e0}, 0xc000286200)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0002f00a0, {0x457e6e0, 0xc00009b2c0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/23 22:59:31 server.go:3230: http: panic serving [::1]:53088: template: layout.html:13: function "templante" not defined
+goroutine 56 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x448c580, 0xc00029c230})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x457e248?, 0xc0002421c0}, {0x0, 0x0}, {0xc00005ea20?, 0x2, 0x0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:17 +0x106
+example.com/school/app/controllers.top({0x457e248?, 0xc0002421c0?}, 0x40c2ab3?)
+	/Users/yamanakakohei/school/app/controllers/route_main.go:8 +0x6b
+net/http.HandlerFunc.ServeHTTP(0xc00005eaf0?, {0x457e248?, 0xc0002421c0?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x457e248, 0xc0002421c0}, 0xc000286300)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002886c0?}, {0x457e248, 0xc0002421c0}, 0xc000286300)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0002f0140, {0x457e6e0, 0xc00009b2c0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/23 22:59:31 server.go:3230: http: panic serving [::1]:53089: template: layout.html:13: function "templante" not defined
+goroutine 57 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x448c580, 0xc00029c330})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x457e248?, 0xc0002a01c0}, {0x0, 0x0}, {0xc000114a20?, 0x2, 0x0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:17 +0x106
+example.com/school/app/controllers.top({0x457e248?, 0xc0002a01c0?}, 0x40c2ab3?)
+	/Users/yamanakakohei/school/app/controllers/route_main.go:8 +0x6b
+net/http.HandlerFunc.ServeHTTP(0xc000114af0?, {0x457e248?, 0xc0002a01c0?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x457e248, 0xc0002a01c0}, 0xc000286400)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002887b0?}, {0x457e248, 0xc0002a01c0}, 0xc000286400)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0002f01e0, {0x457e6e0, 0xc00009b2c0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/23 22:59:31 server.go:3230: http: panic serving [::1]:53090: template: layout.html:13: function "templante" not defined
+goroutine 60 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x448c580, 0xc0001222a0})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x457e248?, 0xc0001441c0}, {0x0, 0x0}, {0xc00011aa20?, 0x2, 0x0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:17 +0x106
+example.com/school/app/controllers.top({0x457e248?, 0xc0001441c0?}, 0x40c2ab3?)
+	/Users/yamanakakohei/school/app/controllers/route_main.go:8 +0x6b
+net/http.HandlerFunc.ServeHTTP(0xc00011aaf0?, {0x457e248?, 0xc0001441c0?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x457e248, 0xc0001441c0}, 0xc000128500)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00011e6c0?}, {0x457e248, 0xc0001441c0}, 0xc000128500)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0002f0280, {0x457e6e0, 0xc00009b2c0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
