@@ -93,3 +93,32 @@ func GetOperatorByEmail(email string) (operator Operator, err error) {
 
 	return operator, err
 }
+
+func (o *Operator) CreateSession() (session Session, err error) {
+	session = Session{}
+	// sessionを作成するコマンド
+	cmd1 := `insert into sessions (uuid, email, operator_id, created_at) values (?, ?, ?, ?)`
+
+	_, err = Db.Exec(
+		cmd1,
+		createUUID(),
+		o.Email,
+		o.ID,
+		time.Now())
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	// sessionを取得すためのコマンド
+	cmd2 := `select id, uuid, email, operator_id, created_at from sessions where operator_id = ? and email = ?`
+
+	err = Db.QueryRow(cmd2, o.ID, o.Email).Scan(
+		&session.ID,
+		&session.UUID,
+		&session.Email,
+		&session.OperatorID,
+		&session.CreatedAt)
+
+	return session, err
+}
