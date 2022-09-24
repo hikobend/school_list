@@ -14,6 +14,14 @@ type Operator struct {
 	CreatedAt time.Time
 }
 
+type Session struct {
+	ID         int
+	UUID       string
+	Email      string
+	OperatorID int
+	CreatedAt  time.Time
+}
+
 func (o *Operator) CreateOperator() (err error) {
 	cmd := `insert into operators(
 		uuid,
@@ -70,4 +78,18 @@ func (o *Operator) DeleteOperator() (err error) {
 		log.Fatalln(err)
 	}
 	return err
+}
+
+func GetOperatorByEmail(email string) (operator Operator, err error) {
+	operator = Operator{}
+	cmd := `select id, uuid, name, email, password, created_at from operators where email = ?`
+	err = Db.QueryRow(cmd, email).Scan(
+		&operator.ID,
+		&operator.UUID,
+		&operator.Name,
+		&operator.Email,
+		&operator.PassWord,
+		&operator.CreatedAt)
+
+	return operator, err
 }
