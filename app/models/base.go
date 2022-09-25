@@ -22,6 +22,7 @@ const (
 	tableNameOperator = "operators"
 	tableNameSchool   = "schools"
 	tableNameSession  = "sessions"
+	tableNameClass    = "classes"
 )
 
 // テーブルはmain関数の前に作成
@@ -59,6 +60,14 @@ func init() {
 		created_at DATETIME)`, tableNameSession)
 
 	Db.Exec(cmdSe)
+
+	cmdC := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		class_number STRING,
+		operator_id INTEGER,
+		created_at DATETIME)`, tableNameClass)
+
+	Db.Exec(cmdC)
 }
 
 // UUID作成
