@@ -85,3 +85,36 @@ func GetClasses() (classes []Class, err error) {
 
 	return classes, err
 }
+
+func (s *School) GetClassBySchool() (classes []Class, err error) {
+	cmd := `select 
+					id,
+					class_number,
+					school_id,
+					created_at from classes where school_id = ?`
+
+	rows, err := Db.Query(cmd, s.ID)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	for rows.Next() {
+		var class Class
+		err = rows.Scan(
+			&class.ID,
+			&class.ClassNumber,
+			&class.SchoolID,
+			&class.CreatedAt,
+		)
+
+		if err != nil {
+			log.Fatalln()
+		}
+
+		classes = append(classes, class)
+	}
+	rows.Close()
+
+	return classes, err
+}
