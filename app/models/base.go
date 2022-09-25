@@ -23,6 +23,7 @@ const (
 	tableNameSchool   = "schools"
 	tableNameSession  = "sessions"
 	tableNameClass    = "classes"
+	tableNameClub     = "clubs"
 )
 
 // テーブルはmain関数の前に作成
@@ -68,6 +69,15 @@ func init() {
 		created_at DATETIME)`, tableNameClass)
 
 	Db.Exec(cmdC)
+
+	cmdCl := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		name STRING,
+		content TEXT,
+		school_id INTEGER,
+		created_at DATETIME)`, tableNameClub)
+
+	Db.Exec(cmdCl)
 }
 
 // UUID作成
