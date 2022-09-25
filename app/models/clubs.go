@@ -151,3 +151,15 @@ func (c *Club) UpdateClub() (err error) {
 
 	return err
 }
+
+func (c *Club) DeleteClub() (err error) {
+	cmd := `delete from clubs where id = ?`
+
+	_, err = Db.Exec(cmd, c.ID)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	return err
+}
