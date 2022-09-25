@@ -8,12 +8,8 @@ import (
 
 func main() {
 	fmt.Println(models.Db)
-	// school, _ := models.GetSchool(3)
-	// school.CreateClass("third class")
 
-	school2, _ := models.GetSchool(1)
-	classes, _ := school2.GetClassBySchool()
-	for _, v := range classes {
-		fmt.Println(v)
-	}
+	c, _ := models.GetClass(1)
+	c.ClassNumber = "Update class_number"
+	c.UpdateClass()
 }
