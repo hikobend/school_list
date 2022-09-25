@@ -12,14 +12,14 @@ func top(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		generateHTML(w, nil, "layout", "public_navbar", "top")
 	} else {
-		http.Redirect(w, r, "/schools", 302)
+		http.Redirect(w, r, "/schools", http.StatusFound)
 	}
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
 	sess, err := session(w, r)
 	if err != nil {
-		http.Redirect(w, r, "/", 302)
+		http.Redirect(w, r, "/", http.StatusFound)
 	} else {
 		operator, err := sess.GetOperatorBySession()
 		if err != nil {
@@ -34,7 +34,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 func schoolNew(w http.ResponseWriter, r *http.Request) {
 	_, err := session(w, r)
 	if err != nil {
-		http.Redirect(w, r, "/login", 302)
+		http.Redirect(w, r, "/login", http.StatusFound)
 	} else {
 		generateHTML(w, nil, "layout", "private_navbar", "school_new")
 	}
@@ -43,7 +43,7 @@ func schoolNew(w http.ResponseWriter, r *http.Request) {
 func schoolSave(w http.ResponseWriter, r *http.Request) {
 	sess, err := session(w, r)
 	if err != nil {
-		http.Redirect(w, r, "/login", 302)
+		http.Redirect(w, r, "/login", http.StatusFound)
 	} else {
 		err = r.ParseForm()
 		if err != nil {
@@ -58,14 +58,14 @@ func schoolSave(w http.ResponseWriter, r *http.Request) {
 			log.Println(err)
 		}
 
-		http.Redirect(w, r, "/schools", 302)
+		http.Redirect(w, r, "/schools", http.StatusFound)
 	}
 }
 
 func schoolEdit(w http.ResponseWriter, r *http.Request, id int) {
 	sess, err := session(w, r)
 	if err != nil {
-		http.Redirect(w, r, "/login", 302)
+		http.Redirect(w, r, "/login", http.StatusFound)
 	} else {
 		_, err := sess.GetOperatorBySession()
 		if err != nil {
@@ -82,7 +82,7 @@ func schoolEdit(w http.ResponseWriter, r *http.Request, id int) {
 func schoolUpdate(w http.ResponseWriter, r *http.Request, id int) {
 	sess, err := session(w, r)
 	if err != nil {
-		http.Redirect(w, r, "/login", 302)
+		http.Redirect(w, r, "/login", http.StatusFound)
 	} else {
 		err := r.ParseForm()
 		if err != nil {
@@ -97,14 +97,14 @@ func schoolUpdate(w http.ResponseWriter, r *http.Request, id int) {
 		if err := t.UpdateSchool(); err != nil {
 			log.Println(err)
 		}
-		http.Redirect(w, r, "/schools", 302)
+		http.Redirect(w, r, "/schools", http.StatusFound)
 	}
 }
 
 func schoolDelete(w http.ResponseWriter, r *http.Request, id int) {
 	sess, err := session(w, r)
 	if err != nil {
-		http.Redirect(w, r, "/login", 302)
+		http.Redirect(w, r, "/login", http.StatusFound)
 	} else {
 		_, err := sess.GetOperatorBySession()
 		if err != nil {
@@ -117,6 +117,6 @@ func schoolDelete(w http.ResponseWriter, r *http.Request, id int) {
 		if err := t.DeleteSchool(); err != nil {
 			log.Println(err)
 		}
-		http.Redirect(w, r, "/schools", 302)
+		http.Redirect(w, r, "/schools", http.StatusFound)
 	}
 }
