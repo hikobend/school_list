@@ -58,3 +58,39 @@ func GetClub(id int) (club Club, err error) {
 
 	return club, err
 }
+
+func GetClubs() (clubs []Club, err error) {
+	cmd := `select 
+					id,
+					name,
+					content,
+					school_id,
+					created_at from clubs`
+
+	rows, err := Db.Query(cmd)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	for rows.Next() {
+		var club Club
+
+		err = rows.Scan(
+			&club.ID,
+			&club.Name,
+			&club.Content,
+			&club.SchoolID,
+			&club.CreatedAt,
+		)
+
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		clubs = append(clubs, club)
+	}
+	rows.Close()
+
+	return clubs, err
+}
