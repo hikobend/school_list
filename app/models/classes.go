@@ -118,3 +118,21 @@ func (s *School) GetClassBySchool() (classes []Class, err error) {
 
 	return classes, err
 }
+
+func (c *Class) UpdateClass() (err error) {
+	cmd := `update classes set
+					class_number = ?, 
+					school_id = ? where id = ?`
+
+	_, err = Db.Exec(cmd,
+		c.ClassNumber,
+		c.SchoolID,
+		c.ID,
+	)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	return err
+}
