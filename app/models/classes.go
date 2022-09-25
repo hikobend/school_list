@@ -28,3 +28,29 @@ func (s *School) CreateClass(class_number string) (err error) {
 	}
 	return err
 }
+
+// 1つのclassを取得
+func GetClass(id int) (class Class, err error) {
+	cmd := `select 
+	id, 
+	class_number, 
+	school_id, 
+	created_at from classes where id = ?`
+
+	class = Class{}
+
+	err = Db.QueryRow(cmd, id).Scan(
+		&class.ID,
+		&class.ClassNumber,
+		&class.SchoolID,
+		&class.CreatedAt,
+	)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	return class, err
+}
+
+// 複数のclassを取得
