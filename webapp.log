@@ -445,3 +445,8 @@ created by net/http.(*Server).Serve
 	/usr/local/go/src/net/http/server.go:3102 +0x4db
 2022/09/25 11:24:44 classes.go:27: table classes has no column named school_id
 2022/09/25 11:27:06 classes.go:27: table classes has no column named school_id
+2022/09/25 15:12:11 classes.go:50: sql: no rows in result set
+2022/09/25 15:14:27 classes.go:50: sql: no rows in result set
+2022/09/25 16:22:50 clubs.go:56: sql: expected 4 destination arguments in Scan, not 5
+2022/09/25 16:25:22 clubs.go:56: sql: expected 4 destination arguments in Scan, not 5
+2022/09/25 16:50:40 clubs.go:109: near "clubs": syntax error
