@@ -64,7 +64,7 @@ func init() {
 	cmdC := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		class_number STRING,
-		operator_id INTEGER,
+		school_id INTEGER,
 		created_at DATETIME)`, tableNameClass)
 
 	Db.Exec(cmdC)
