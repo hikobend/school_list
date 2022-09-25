@@ -9,6 +9,4 @@ import (
 func main() {
 	fmt.Println(models.Db)
 
-	c, _ := models.GetClass(1)
-	c.DeleteClass()
 }
