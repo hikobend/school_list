@@ -136,3 +136,15 @@ func (c *Class) UpdateClass() (err error) {
 
 	return err
 }
+
+func (c *Class) DeleteClass() (err error) {
+	cmd := `delete from classes where id = ?`
+
+	_, err = Db.Exec(cmd, c.ID)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	return err
+}
