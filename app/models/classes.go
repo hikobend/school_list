@@ -32,10 +32,10 @@ func (s *School) CreateClass(class_number string) (err error) {
 // 1つのclassを取得
 func GetClass(id int) (class Class, err error) {
 	cmd := `select 
-	id, 
-	class_number, 
-	school_id, 
-	created_at from classes where id = ?`
+					id, 
+					class_number, 
+					school_id, 
+					created_at from classes where id = ?`
 
 	class = Class{}
 
@@ -54,3 +54,34 @@ func GetClass(id int) (class Class, err error) {
 }
 
 // 複数のclassを取得
+func GetClasses() (classes []Class, err error) {
+	cmd := `select 
+					id, 
+					class_number, 
+					school_id, 
+					created_at from classes`
+	rows, err := Db.Query(cmd)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	for rows.Next() {
+		var class Class
+
+		err = rows.Scan(
+			&class.ID,
+			&class.ClassNumber,
+			&class.SchoolID,
+			&class.CreatedAt)
+
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		classes = append(classes, class)
+	}
+	rows.Close()
+
+	return classes, err
+}
