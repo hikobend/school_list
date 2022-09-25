@@ -10,6 +10,5 @@ func main() {
 	fmt.Println(models.Db)
 
 	c, _ := models.GetClub(1)
-	c.Content = "Update content"
-	c.UpdateClub()
+	c.DeleteClub()
 }
