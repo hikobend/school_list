@@ -443,3 +443,5 @@ net/http.(*conn).serve(0xc000001220, {0x4587380, 0xc00007f2f0})
 	/usr/local/go/src/net/http/server.go:1991 +0x607
 created by net/http.(*Server).Serve
 	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/25 11:24:44 classes.go:27: table classes has no column named school_id
+2022/09/25 11:27:06 classes.go:27: table classes has no column named school_id

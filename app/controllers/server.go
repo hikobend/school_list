@@ -21,7 +21,7 @@ func generateHTML(w http.ResponseWriter, data interface{}, filenames ...string) 
 	templates.ExecuteTemplate(w, "layout", data)
 }
 
-func session(w http.ResponseWriter, r *http.Request) (sess models.Session, err error) {
+func session(_ http.ResponseWriter, r *http.Request) (sess models.Session, err error) {
 	cookie, err := r.Cookie("_cookie")
 	if err == nil {
 		sess = models.Session{UUID: cookie.Value}
