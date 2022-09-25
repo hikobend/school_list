@@ -130,3 +130,24 @@ func (s *School) GetClubBySchool() (clubs []Club, err error) {
 
 	return clubs, err
 }
+
+func (c *Club) UpdateClub() (err error) {
+	cmd := `update clubs set
+					name = ?,
+					content = ?,
+					school_id = ? where id = ?`
+
+	_, err = Db.Exec(
+		cmd,
+		c.Name,
+		c.Content,
+		c.SchoolID,
+		c.ID,
+	)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	return err
+}
