@@ -449,3 +449,4 @@ created by net/http.(*Server).Serve
 2022/09/25 15:14:27 classes.go:50: sql: no rows in result set
 2022/09/25 16:22:50 clubs.go:56: sql: expected 4 destination arguments in Scan, not 5
 2022/09/25 16:25:22 clubs.go:56: sql: expected 4 destination arguments in Scan, not 5
+2022/09/25 16:50:40 clubs.go:109: near "clubs": syntax error
