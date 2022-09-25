@@ -9,10 +9,8 @@ import (
 func main() {
 	fmt.Println(models.Db)
 
-	school, _ := models.GetSchool(3)
-	school.CreateClub("third club", "third content")
-
-	clubs, _ := models.GetClubs()
+	school2, _ := models.GetSchool(2)
+	clubs, _ := school2.GetClubBySchool()
 	for _, v := range clubs {
 		fmt.Println(v)
 	}
