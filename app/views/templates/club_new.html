@@ -1,3 +1,23 @@
-{{define "content"}}
-club_new
+{{ define "content" }}
+  <h1>〇〇学校</h1>
+  <hr>
+
+  <p>クラスを<a href="/schools/club/new">追加</a>する</p>
+
+  <h3>管理クラス一覧</h3>
+  {{ range .Schools }}
+  {{ end }}
+
+  <p>部活を<a href="/schools/new">追加</a>する</p>
+
+  <h3>管理部活一覧</h3>
+  {{ range .Schools }}
+  {{ end }}
+
+  {{ range .Schools }}
+    <p>{{ .Name }}<a href="/schools/club/new">詳細</a>へ</p>
+    <p><a href="/schools/edit/{{.ID}}">編集</a></p>
+    <p><a href="/schools/delete/{{.ID}}">削除</a></p>
+    <hr>
+  {{end}}
 {{end}}
