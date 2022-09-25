@@ -9,6 +9,11 @@ import (
 func main() {
 	fmt.Println(models.Db)
 
-	c, _ := models.GetClass(1)
-	fmt.Println(c)
+	school, _ := models.GetSchool(2)
+	school.CreateClass("second class")
+
+	classes, _ := models.GetClasses()
+	for _, v := range classes {
+		fmt.Println(v)
+	}
 }
