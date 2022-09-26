@@ -626,3 +626,4 @@ net/http.(*conn).serve(0xc000000500, {0x4589840, 0xc00011b3e0})
 	/usr/local/go/src/net/http/server.go:1991 +0x607
 created by net/http.(*Server).Serve
 	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/26 21:08:25 schools.go:45: sql: no rows in result set
