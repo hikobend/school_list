@@ -96,3 +96,20 @@ func schoolDelete(w http.ResponseWriter, r *http.Request, id int) {
 		http.Redirect(w, r, "/schools", http.StatusFound)
 	}
 }
+
+func schoolShow(w http.ResponseWriter, r *http.Request, id int) {
+	sess, err := session(w, r)
+	if err != nil {
+		http.Redirect(w, r, "/login", http.StatusFound)
+	} else {
+		_, err := sess.GetOperatorBySession()
+		if err != nil {
+			log.Println(err)
+		}
+		t, err := models.GetSchool(id)
+		if err != nil {
+			log.Println(err)
+		}
+		generateHTML(w, t, "layout", "private_navbar", "school_show")
+	}
+}
