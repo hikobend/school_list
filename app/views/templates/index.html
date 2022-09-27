@@ -1,14 +1,14 @@
 {{ define "content" }}
-OperatorName:{{.Name}}
-<h1>Sample SchoolApp</h1>
+  ログイン中のユーザー名:{{.Name}}
+  <h1>Sample SchoolApp</h1>
 
-<p>[<a href="/schools/new">Create</a>]</p>
-<hr>
+  <p>学校を<a href="/schools/new">追加</a>する</p>
+  <hr>
 
-{{ range .Schools }}
-<div>{{ .Name }}</div>
-<p>[<a href="/schools/edit/{{.ID}}">Edit</a>]</p>
-<p>[<a href="/schools/delete/{{.ID}}">Delete</a>]</p>
-<hr>
-{{end}}
+  {{ range .Schools }}
+    <p>{{ .Name }}<a href="/schools/club/new">詳細</a>へ</p>
+    <p><a href="/schools/edit/{{.ID}}">編集</a></p>
+    <p><a href="/schools/delete/{{.ID}}">削除</a></p>
+    <hr>
+  {{end}}
 {{end}}

@@ -65,5 +65,6 @@ func StartmainServer() error {
 	http.HandleFunc("/schools/edit/", parseURL(schoolEdit))
 	http.HandleFunc("/schools/update/", parseURL(schoolUpdate))
 	http.HandleFunc("/schools/delete/", parseURL(schoolDelete))
+	http.HandleFunc("/schools/club/new", clubNew)
 	return http.ListenAndServe(":"+config.Config.Port, nil)
 }
