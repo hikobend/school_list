@@ -10,6 +10,7 @@ type School struct {
 	Name       string
 	OperatorID int
 	CreatedAt  time.Time
+	Clubs      []Club
 }
 
 func (o *Operator) CreateSchool(name string) (err error) {

@@ -62,6 +62,7 @@ func StartmainServer() error {
 	http.HandleFunc("/schools", index)
 	http.HandleFunc("/schools/new", schoolNew)
 	http.HandleFunc("/schools/save", schoolSave)
+	http.HandleFunc("/schools/show/", parseURL(schoolShow))
 	http.HandleFunc("/schools/edit/", parseURL(schoolEdit))
 	http.HandleFunc("/schools/update/", parseURL(schoolUpdate))
 	http.HandleFunc("/schools/delete/", parseURL(schoolDelete))

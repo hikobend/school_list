@@ -450,3 +450,180 @@ created by net/http.(*Server).Serve
 2022/09/25 16:22:50 clubs.go:56: sql: expected 4 destination arguments in Scan, not 5
 2022/09/25 16:25:22 clubs.go:56: sql: expected 4 destination arguments in Scan, not 5
 2022/09/25 16:50:40 clubs.go:109: near "clubs": syntax error
+2022/09/25 20:30:04 server.go:3230: http: panic serving [::1]:49851: template: club_new.html:8: missing value for range
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x4495060, 0xc0003802e0})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x45893a8?, 0xc000356d20}, {0x0, 0x0}, {0xc00014da10?, 0x3, 0x8844fe0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:20 +0x106
+example.com/school/app/controllers.clubNew({0x45893a8, 0xc000356d20}, 0x40c2f13?)
+	/Users/yamanakakohei/school/app/controllers/route_club.go:10 +0xdf
+net/http.HandlerFunc.ServeHTTP(0xc00014daf0?, {0x45893a8?, 0xc000356d20?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x45893a8, 0xc000356d20}, 0xc00025ec00)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00019e030?}, {0x45893a8, 0xc000356d20}, 0xc00025ec00)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001390e0, {0x4589840, 0xc00011b3e0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/25 20:30:04 server.go:3230: http: panic serving [::1]:49910: template: club_new.html:8: missing value for range
+goroutine 270 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x4495060, 0xc0002d0bf0})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x45893a8?, 0xc000356e00}, {0x0, 0x0}, {0xc000141a10?, 0x3, 0x8844e00?})
+	/Users/yamanakakohei/school/app/controllers/server.go:20 +0x106
+example.com/school/app/controllers.clubNew({0x45893a8, 0xc000356e00}, 0x40c2f13?)
+	/Users/yamanakakohei/school/app/controllers/route_club.go:10 +0xdf
+net/http.HandlerFunc.ServeHTTP(0xc00005eaf0?, {0x45893a8?, 0xc000356e00?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x45893a8, 0xc000356e00}, 0xc0002d6500)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002e68d0?}, {0x45893a8, 0xc000356e00}, 0xc0002d6500)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000003c0, {0x4589840, 0xc00011b3e0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/25 20:30:04 server.go:3230: http: panic serving [::1]:49911: template: club_new.html:8: missing value for range
+goroutine 273 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x4495060, 0xc000380500})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x45893a8?, 0xc000293a40}, {0x0, 0x0}, {0xc000141a10?, 0x3, 0x8844e00?})
+	/Users/yamanakakohei/school/app/controllers/server.go:20 +0x106
+example.com/school/app/controllers.clubNew({0x45893a8, 0xc000293a40}, 0x40c2f13?)
+	/Users/yamanakakohei/school/app/controllers/route_club.go:10 +0xdf
+net/http.HandlerFunc.ServeHTTP(0xc00005faf0?, {0x45893a8?, 0xc000293a40?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x45893a8, 0xc000293a40}, 0xc0002d6600)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002e6c60?}, {0x45893a8, 0xc000293a40}, 0xc0002d6600)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000460, {0x4589840, 0xc00011b3e0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/25 20:30:04 server.go:3230: http: panic serving [::1]:49912: template: club_new.html:8: missing value for range
+goroutine 306 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x4495060, 0xc0002d0f50})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x45893a8?, 0xc000293b20}, {0x0, 0x0}, {0xc000415a10?, 0x3, 0x8844e00?})
+	/Users/yamanakakohei/school/app/controllers/server.go:20 +0x106
+example.com/school/app/controllers.clubNew({0x45893a8, 0xc000293b20}, 0x40c2f13?)
+	/Users/yamanakakohei/school/app/controllers/route_club.go:10 +0xdf
+net/http.HandlerFunc.ServeHTTP(0xc00005faf0?, {0x45893a8?, 0xc000293b20?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x45893a8, 0xc000293b20}, 0xc0002d6700)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002e6f90?}, {0x45893a8, 0xc000293b20}, 0xc0002d6700)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001fa320, {0x4589840, 0xc00011b3e0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/25 20:30:05 server.go:3230: http: panic serving [::1]:49913: template: club_new.html:8: missing value for range
+goroutine 307 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x4495060, 0xc000380620})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x45893a8?, 0xc000293c00}, {0x0, 0x0}, {0xc000415a10?, 0x3, 0x8844fe0?})
+	/Users/yamanakakohei/school/app/controllers/server.go:20 +0x106
+example.com/school/app/controllers.clubNew({0x45893a8, 0xc000293c00}, 0x40c2f13?)
+	/Users/yamanakakohei/school/app/controllers/route_club.go:10 +0xdf
+net/http.HandlerFunc.ServeHTTP(0xc00005eaf0?, {0x45893a8?, 0xc000293c00?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x45893a8, 0xc000293c00}, 0xc00034b000)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00038a720?}, {0x45893a8, 0xc000293c00}, 0xc00034b000)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001fa3c0, {0x4589840, 0xc00011b3e0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/25 20:30:05 server.go:3230: http: panic serving [::1]:49914: template: club_new.html:8: missing value for range
+goroutine 308 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x4495060, 0xc000239a30})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x45893a8?, 0xc000225b20}, {0x0, 0x0}, {0xc00013fa10?, 0x3, 0x8844e00?})
+	/Users/yamanakakohei/school/app/controllers/server.go:20 +0x106
+example.com/school/app/controllers.clubNew({0x45893a8, 0xc000225b20}, 0x40c2f13?)
+	/Users/yamanakakohei/school/app/controllers/route_club.go:10 +0xdf
+net/http.HandlerFunc.ServeHTTP(0xc00019aaf0?, {0x45893a8?, 0xc000225b20?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x45893a8, 0xc000225b20}, 0xc00034b100)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00038a7e0?}, {0x45893a8, 0xc000225b20}, 0xc00034b100)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001fa460, {0x4589840, 0xc00011b3e0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/25 20:30:05 server.go:3230: http: panic serving [::1]:49915: template: club_new.html:8: missing value for range
+goroutine 324 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x4495060, 0xc0002d1180})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x45893a8?, 0xc000225c00}, {0x0, 0x0}, {0xc00013fa10?, 0x3, 0x8844e00?})
+	/Users/yamanakakohei/school/app/controllers/server.go:20 +0x106
+example.com/school/app/controllers.clubNew({0x45893a8, 0xc000225c00}, 0x40c2f13?)
+	/Users/yamanakakohei/school/app/controllers/route_club.go:10 +0xdf
+net/http.HandlerFunc.ServeHTTP(0xc00019aaf0?, {0x45893a8?, 0xc000225c00?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x45893a8, 0xc000225c00}, 0xc00025ed00)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000269b60?}, {0x45893a8, 0xc000225c00}, 0xc00025ed00)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000139220, {0x4589840, 0xc00011b3e0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/25 20:30:10 server.go:3230: http: panic serving [::1]:49916: template: club_new.html:8: missing value for range
+goroutine 300 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x4495060, 0xc0002d1290})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+text/template.Must(...)
+	/usr/local/go/src/text/template/helper.go:26
+example.com/school/app/controllers.generateHTML({0x45893a8?, 0xc000225ce0}, {0x0, 0x0}, {0xc000143a10?, 0x3, 0x8844e00?})
+	/Users/yamanakakohei/school/app/controllers/server.go:20 +0x106
+example.com/school/app/controllers.clubNew({0x45893a8, 0xc000225ce0}, 0x40c2f13?)
+	/Users/yamanakakohei/school/app/controllers/route_club.go:10 +0xdf
+net/http.HandlerFunc.ServeHTTP(0xc00019aaf0?, {0x45893a8?, 0xc000225ce0?}, 0x0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x45893a8, 0xc000225ce0}, 0xc00025ee00)
+	/usr/local/go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000269e30?}, {0x45893a8, 0xc000225ce0}, 0xc00025ee00)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000500, {0x4589840, 0xc00011b3e0})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/09/26 21:08:25 schools.go:45: sql: no rows in result set
